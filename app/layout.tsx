@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
  
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState({ id: 0, nombre: "", correo: "", accessToken: ""})
   useEffect(() => {
     // Obtenemos el local storage => Es estatico
     const userRetrieved = localStorage.getItem("user");
