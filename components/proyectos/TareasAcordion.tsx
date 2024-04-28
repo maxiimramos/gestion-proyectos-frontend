@@ -9,7 +9,7 @@ function TareasAccordion({tareas}: {tareas: Tarea[]}) {
 
         {tareas?.map(tarea => {
         return (
-          <Accordion.Item eventKey={tarea.id} >
+          <Accordion.Item eventKey={tarea.id} key={tarea.id}>
             <Accordion.Header>{tarea.nombre}</Accordion.Header>
             <Accordion.Body>
             {tarea.etiquetas.map((etiqueta)=>{
