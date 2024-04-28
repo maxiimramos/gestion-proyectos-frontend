@@ -18,7 +18,7 @@ import { Button } from "react-bootstrap";
  2- Next
     
 */
-export default function page() {
+export default function Page() {
   return (
     <main>
        <h3> 

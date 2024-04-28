@@ -8,7 +8,7 @@ import { FormEvent, FormEventHandler, useReducer, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-export default function page() {
+export default function Page() {
   const router = useRouter();
   const [nombre, setNombre] = useState("")
   const [email, setEmail] = useState("")

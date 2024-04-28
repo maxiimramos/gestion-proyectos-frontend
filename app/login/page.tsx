@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useCookies } from 'next-client-cookies';
 
-export default function page() {
+export default function Page() {
 
     // Recoger los datos introducidos en los inputs 
     // y hacer una peticion al servidor para logear al usuario

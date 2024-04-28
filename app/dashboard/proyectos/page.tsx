@@ -9,7 +9,7 @@ import { Button } from 'react-bootstrap';
 import { CrearProyecto } from '@/components/modals/CrearProyecto';
 import { AuthContext } from '@/contexts/AuthContext';
 
-export default function page() {
+export default function Page() {
   const router = useRouter();
   const [proyectos, setProyectos] = useState([])
   const [nombre, setNombre] = useState("")

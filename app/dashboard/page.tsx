@@ -4,7 +4,7 @@ import { AuthContext } from '@/contexts/AuthContext';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useContext, useState } from 'react'
 
-export default function page() {
+export default function Page() {
   const {user} = useContext(AuthContext);
   const [first, setfirst] = useState(false)
   const router = useRouter();
