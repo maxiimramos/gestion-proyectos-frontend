@@ -1,3 +1,6 @@
+"use server"
+
+
 import { CookiesProvider } from 'next-client-cookies/server'
 import React, { ReactNode } from 'react'
 

@@ -50,7 +50,7 @@ export default function RootLayout({
       <body className={inter.className}>
 
         <AuthContext.Provider value={{ user, setUser }}>
-          <Wrapper>
+          
           <Container className="layout-main" >
             
           <MainTab />
@@ -59,7 +59,7 @@ export default function RootLayout({
 
           </Container>
           <Footer></Footer>
-          </Wrapper>
+          
         </AuthContext.Provider>
 
       </body>

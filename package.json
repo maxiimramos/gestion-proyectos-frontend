@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "cookies-next": "^4.1.1",
     "js-cookie": "^3.0.5",
     "next": "14.1.4",
     "next-client-cookies": "^1.1.1",
