@@ -4,19 +4,20 @@
 
 const BASE_URL = process.env.BASE_URL;
 
-export const obtenerProyectos = async () => {
-    const response = await fetch("http://localhost:3003/proyectos");
+export const obtenerProyectos = async (userId:number) => {
+    
+    const response = await fetch("http://localhost:3003/proyectos/"+ userId);
     const proyectos = await response.json()
     return proyectos;
 }
 
-export const crearProyectos = async (nombre: string, descripcion: string) => {
+export const crearProyectos = async (nombre: string, descripcion: string, userId:number) => {
     const body = {
         nombre: nombre,
-        descripcion: descripcion
+        descripcion: descripcion,
+        idUsuario: userId
     }
 console.log("BODY", JSON.stringify(body));
-debugger
 const response = await fetch(`${BASE_URL}/proyectos`,
         {body: JSON.stringify(body), method: "POST",  headers: {
            "Content-Type": "application/json",

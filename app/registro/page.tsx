@@ -57,10 +57,10 @@ export default function page() {
         <Form.Control onChange={(e)=>setPassword(e.target.value)} type="password" placeholder="Contraseña" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
+        <Form.Check type="checkbox" label="Recuerdame" />
       </Form.Group>
       <Button variant="primary" type="submit">
-        Submit
+        Enviar
       </Button>
       <GenericAlert variant='success' text='Usuario registrado correctamente' show={showAlert}></GenericAlert>
     </Form>

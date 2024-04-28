@@ -33,16 +33,16 @@ const CrearTarea = ({handleObtenerProyectos, idProyecto}: {handleObtenerProyecto
                     <Form>
                         <Form.Group className="mb-3" controlId="formBasicName">
                             <Form.Label>Nombre</Form.Label>
-                            <Form.Control  onChange={(e)=>setTitulo(e.target.value)} type="name" placeholder="introduzca el nombre del proyecto" />
+                            <Form.Control  onChange={(e)=>setTitulo(e.target.value)} type="name" placeholder="nombre de la tarea" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicDescription">
                             <Form.Label>Descripcion</Form.Label>
-                            <Form.Control as="textarea" onChange={(e)=>setDescripcion(e.target.value)}  rows={3} placeholder="describa aquí su proyecto" />
+                            <Form.Control as="textarea" onChange={(e)=>setDescripcion(e.target.value)}  rows={3} placeholder="descripcion de la tarea" />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicEstado">
                             <Form.Label>Estado</Form.Label>
                             <Form.Select aria-label="Default select example" onChange={(e)=>setEstado(e.target.value)}>
-                            <option>Open this select menu</option>
+                            <option>estado de la tarea</option>
                             <option value="TO DO">TO DO</option>
                             <option value="IN PROGRESS">IN PROGRESS</option>
                             <option value="DONE">DONE</option>
@@ -53,10 +53,10 @@ const CrearTarea = ({handleObtenerProyectos, idProyecto}: {handleObtenerProyecto
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
-                        Close
+                        Cerrar
                     </Button>
                     <Button variant="primary" onClick={handleCrearProyecto}>
-                        Save Changes
+                        Guardar cambios
                     </Button>
                 </Modal.Footer>
             </Modal>

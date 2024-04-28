@@ -46,7 +46,7 @@ export default function page() {
         <Form.Label>Correo Electrónico</Form.Label>
         <Form.Control onChange={(e)=>setEmail(e.target.value)} type="email" placeholder="Introduzca su correo" />
         <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
+          No compartiremos su correo con nadie.
         </Form.Text>
       </Form.Group>
 
@@ -55,10 +55,10 @@ export default function page() {
         <Form.Control onChange={(e)=>setPassword(e.target.value)} type="password" placeholder="Contraseña" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
+        <Form.Check type="checkbox" label="Recuerdame" />
       </Form.Group>
       <Button variant="primary" type="submit">
-        Submit
+        Enviar
       </Button>
     </Form>
   );

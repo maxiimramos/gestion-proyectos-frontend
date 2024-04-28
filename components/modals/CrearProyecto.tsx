@@ -1,5 +1,6 @@
+import { AuthContext } from '@/contexts/AuthContext';
 import { crearProyectos } from '@/services/proyectos';
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { useState } from 'react';
 import { Form } from 'react-bootstrap';
@@ -12,8 +13,9 @@ const CrearProyecto = ({handleObtenerProyectos}: {handleObtenerProyectos: () =>{
     const [descripcion, setDescripcion] = useState("")
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const {user} = useContext(AuthContext)
     const handleCrearProyecto = async() => {
-        await crearProyectos(titulo, descripcion)
+        await crearProyectos(titulo, descripcion, user.id)
         await handleObtenerProyectos();
         handleClose()
     }
@@ -41,10 +43,10 @@ const CrearProyecto = ({handleObtenerProyectos}: {handleObtenerProyectos: () =>{
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
-                        Close
+                        Cerrar
                     </Button>
                     <Button variant="primary" onClick={handleCrearProyecto}>
-                        Save Changes
+                        Crear proyecto
                     </Button>
                 </Modal.Footer>
             </Modal>

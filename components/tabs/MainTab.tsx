@@ -29,6 +29,7 @@ export const MainTab = () => {
     const user = localStorage.getItem("user")
     if(user){
       cookies.set("authToken", user);
+      setUser(JSON.parse(user));
     }
   }, [])
   
@@ -61,6 +62,9 @@ export const MainTab = () => {
       )}
     {user && (
         <>
+        <Nav.Item>
+        <Nav.Link href="/">Gespro</Nav.Link>
+        </Nav.Item>
           <Nav.Item>
             <Nav.Link href="/dashboard">Home</Nav.Link>
           </Nav.Item>

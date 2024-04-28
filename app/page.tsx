@@ -22,11 +22,12 @@ export default function page() {
   return (
     <main>
        <h3> 
-        Bienvenido a la plataforma de gestion de proyectos y tareas.
+        Bienvenido a Gespro, la plataforma de gestión de proyectos y tareas.
        </h3>
        <p>
         Esta plataforma te permite crear y gestionar proyectos y tareas del dia a dia.
        </p>
     </main>
+
   );
 }

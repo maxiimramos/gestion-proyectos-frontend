@@ -4,7 +4,6 @@ import { Badge } from 'react-bootstrap';
 
 function TareasAccordion({tareas}: {tareas: Tarea[]}) {
 
-   debugger;
   return (
     <Accordion defaultActiveKey="0" style={{backgroundColor:"var(--oscuro1)"}}>
 

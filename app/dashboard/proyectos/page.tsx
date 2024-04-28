@@ -7,26 +7,29 @@ import Form from 'react-bootstrap/Form';
 import ListaProyectos from '@/components/proyectos/ListaProyectos';
 import { Button } from 'react-bootstrap';
 import { CrearProyecto } from '@/components/modals/CrearProyecto';
+import { AuthContext } from '@/contexts/AuthContext';
 
 export default function page() {
   const router = useRouter();
   const [proyectos, setProyectos] = useState([])
   const [nombre, setNombre] = useState("")
   const [descripcion, setDescripcion] = useState("")
-  const handleCrearProyectos = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("HOLA", nombre, descripcion);
-    const proyecto = await crearProyectos(nombre, descripcion);
-  }
+  const  {user} = useContext(AuthContext);
+
 
   const handleObtenerProyectos = async () => {
-    const response = await obtenerProyectos()
-    debugger;
+   
+    if (user && user?.id !== null){
+    const response = await obtenerProyectos(user.id)
+
     setProyectos(response.proyectos);
+    }
   }
   useEffect(() => {
+    
     handleObtenerProyectos()
-  }, [])
+    
+  }, [user])
 
 
   return (
