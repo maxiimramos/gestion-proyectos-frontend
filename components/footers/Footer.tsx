@@ -4,8 +4,8 @@ const Footer = (): JSX.Element => <footer className="page-footer font-small blue
     <div className="container-fluid text-center text-md-left">
         <div className="row">
             <div className="col-md-6 mt-md-0 mt-3">
-                <h5 className="text-uppercase">Footer Content</h5>
-                <p>Here you can use rows and columns to organize your footer content.</p>
+                <h5 className="text-uppercase"></h5>
+                <p></p>
             </div>
 
             <hr className="clearfix w-100 d-md-none pb-0"/>

@@ -32,6 +32,10 @@ export const loginUser = async (email: string, password: string) => {
             "Content-Type": "application/json",
           }, }
     );
+    if (response.status !==200){
+        return {status: 400}
+    }
+
     const userLoged = await response.json();
     return userLoged;
     // Tarea

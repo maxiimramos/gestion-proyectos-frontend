@@ -24,7 +24,10 @@ export default function Page() {
      console.log("HOLA", email, password);
      const user = await loginUser(email, password);
      // Local storage es una variable (es un elemento del navegador que no es dinamico)
-
+    if (user?.status==400){
+      alert("Usuario no encontrado")
+    }
+    else{
      // Persistir en el navegador los datos de sesion (usuario)
      // Esto tiene el problema de que no se puede usar de forma dinamica.
      // No es un estado => No es dinamico => No puedes usar para generar paginas dinamicas
@@ -34,10 +37,11 @@ export default function Page() {
      // La parte dinamica => Nos sirve para generar dinamismo en los componentes de react
      // En memoria dinamica => Tu cierras la app y desaparece 
 
-     cookies.set('authTokens', JSON.stringify(user))
+     cookies.set('authToken', JSON.stringify(user))
      setUser(user);
      router.push("/dashboard");
      console.log("USUARIO", user)
+    }
   }
    
   return (

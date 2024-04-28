@@ -7,14 +7,15 @@ import type { NextRequest } from 'next/server'
  * @returns 
  */
 export function middleware(request: NextRequest) {
-	const authTokens = request.cookies.get('authTokens')?.value
-	
-	if (request.nextUrl.pathname.startsWith('/dashboard') && !authTokens) {
+	const authToken = request.cookies.get('authToken')?.value
+	console.log("TOKEN", authToken);
+	if (request.nextUrl.pathname.startsWith('/dashboard') && !authToken) {
 		const response = NextResponse.redirect(new URL('/login', request.url))
-		response.cookies.delete('authTokens')
+		response.cookies.delete('authToken')
 		return response
 	}
-	if (authTokens && request.nextUrl.pathname.startsWith('/login')) {
+	if (authToken && request.nextUrl.pathname.startsWith('/login')) {
+		console.log("TOKEN", authToken);
 		const response = NextResponse.redirect(new URL('/dashboard', request.url))
 		return response
 	}

@@ -10,6 +10,7 @@ import "./MainTab.css";
 import { useContext, useEffect } from 'react';
 import { AuthContext } from '@/contexts/AuthContext';
 import { useCookies } from 'next-client-cookies';
+
 /**
  * 
  * @returns  
@@ -22,20 +23,23 @@ export const MainTab = () => {
   const handleCloseSession = () =>{
     setUser(null);
     localStorage.removeItem("user");
-    cookies.remove('authTokens');
+    cookies.remove('authToken');
     router.push("/")
   }
   useEffect(() => {
-    const user = localStorage.getItem("user")
-    if(user){
-      cookies.set("authToken", user);
-      setUser(JSON.parse(user));
+    const userRetrieved = localStorage.getItem("user")
+    if(userRetrieved){
+      cookies.set("authToken", userRetrieved);
+      setUser(JSON.parse(userRetrieved));
     }
+
   }, [])
   
   return (
+
     <Nav variant="tabs" className='mainTab'>
-      {!user && (
+      {
+     !user  && (
         <>
           <Navbar bg="dark" data-bs-theme="dark">
         <Container>

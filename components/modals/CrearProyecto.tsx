@@ -15,6 +15,7 @@ const CrearProyecto = ({handleObtenerProyectos}: {handleObtenerProyectos: () =>{
     const handleShow = () => setShow(true);
     const {user} = useContext(AuthContext)
     const handleCrearProyecto = async() => {
+
         await crearProyectos(titulo, descripcion, user.id)
         await handleObtenerProyectos();
         handleClose()

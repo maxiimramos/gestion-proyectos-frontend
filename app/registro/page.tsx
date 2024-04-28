@@ -2,11 +2,13 @@
 
 import { GenericAlert } from '@/components/alerts/GenericAlert';
 import { MainTab } from '@/components/tabs/MainTab';
+import { AuthContext } from '@/contexts/AuthContext';
 import { signupUser } from '@/services/users';
 import { useRouter } from 'next/navigation';
-import { FormEvent, FormEventHandler, useReducer, useState } from 'react';
+import { FormEvent, FormEventHandler, useContext, useReducer, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useCookies } from 'next-client-cookies';
 
 export default function Page() {
   const router = useRouter();
@@ -14,6 +16,9 @@ export default function Page() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [showAlert, setShowAlert] = useState(false);
+  const {setUser} = useContext(AuthContext);
+  const cookies = useCookies() 
+
   const handleSignupUser = async(e: FormEvent<HTMLFormElement>) =>{
     e.preventDefault();
      console.log("HOLA", nombre, email, password);
@@ -26,6 +31,9 @@ export default function Page() {
      */
      // await localStorage.setItem("user", JSON.stringify(user));
      setShowAlert(true);
+     localStorage.setItem("user", JSON.stringify(user.user));
+     cookies.set('authToken', JSON.stringify(user.user))
+     setUser(user.user);
      setTimeout(()=>{
       router.push("/");
      }, 3000)
