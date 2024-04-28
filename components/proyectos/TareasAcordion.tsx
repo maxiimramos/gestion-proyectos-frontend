@@ -14,7 +14,7 @@ function TareasAccordion({tareas}: {tareas: Tarea[]}) {
             <Accordion.Body>
             {tarea.etiquetas.map((etiqueta)=>{
                 return (
-                    <Badge color={etiqueta.descripcion}>{etiqueta.nombre}</Badge>
+                    <Badge key={etiqueta.idTarea} color={etiqueta.descripcion}>{etiqueta.nombre}</Badge>
                 )
             })}
             

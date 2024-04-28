@@ -18,7 +18,7 @@ export default function ListaProyectos({ proyectos , handleObtenerProyectos}: Li
             <Container style={{display: "block"}}>
                 <Row>
             {proyectos?.map((proyecto: Proyecto) => 
-            <Col xs={12} md={6} lg={4}>
+            <Col xs={12} md={6} lg={4} key={proyecto.id}>
                 <ProyectoCard proyecto={proyecto} handleObtenerProyectos={handleObtenerProyectos}/>
                 </Col>
             )}
