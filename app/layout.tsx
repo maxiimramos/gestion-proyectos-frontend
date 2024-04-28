@@ -15,6 +15,7 @@ import { AuthContext } from "@/contexts/AuthContext";
 import { useEffect, useState } from "react";
 import Footer from "@/components/footers/Footer";
 import { CookiesProvider } from 'next-client-cookies/server';
+import { Wrapper } from "./wrapper";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -49,7 +50,7 @@ export default function RootLayout({
       <body className={inter.className}>
 
         <AuthContext.Provider value={{ user, setUser }}>
-        
+          <Wrapper>
           <Container className="layout-main" >
             
           <MainTab />
@@ -58,6 +59,7 @@ export default function RootLayout({
 
           </Container>
           <Footer></Footer>
+          </Wrapper>
         </AuthContext.Provider>
 
       </body>
