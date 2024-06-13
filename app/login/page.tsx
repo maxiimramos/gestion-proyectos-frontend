@@ -36,7 +36,6 @@ export default function Page() {
      // Enviar a el context el usuario para tenerlo de manera dinamica
      // La parte dinamica => Nos sirve para generar dinamismo en los componentes de react
      // En memoria dinamica => Tu cierras la app y desaparece 
-
      cookies.set('authToken', JSON.stringify(user))
      setUser(user);
      router.push("/dashboard");

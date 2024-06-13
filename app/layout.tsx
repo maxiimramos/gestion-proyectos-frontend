@@ -39,7 +39,7 @@ export default function RootLayout({
     const userRetrieved = localStorage.getItem("user");
     if (userRetrieved) {
       const userSession = JSON.parse(userRetrieved);
-      
+  
       // Y lo convertimos en algo dinamico => Context => Tiene un estado para la sesion
       setUser(userSession);
     }

@@ -15,7 +15,6 @@ function ProyectoCard({ proyecto, handleObtenerProyectos }: ProyectoProps) {
   
   }
   const handleDeleteProyecto = async() =>{
-    debugger;  
     await borrarProyectos(proyecto.id);
       await handleObtenerProyectos();
   }

@@ -39,8 +39,8 @@ export const MainTab = () => {
 
     <Nav variant="tabs" className='mainTab'>
       {
-     !user  && (
-        <>
+     (!user || user.accessToken === "")  && (
+  
           <Navbar bg="dark" data-bs-theme="dark">
         <Container>
           <Navbar.Brand href="/">Gespro</Navbar.Brand>
@@ -51,21 +51,12 @@ export const MainTab = () => {
           </Nav>
         </Container>
       </Navbar>
-        </>
-      //   <Nav.Item>
-      //   <Nav.Link href="/">Welcome</Nav.Link>
-      // </Nav.Item>
-      // <Nav.Item>
-      //   <Nav.Link href='/registro'>Registro</Nav.Link>
-      // </Nav.Item>
-      // <Nav.Item>
-      //   <Nav.Link href="/login">
-      //     Login
-      //   </Nav.Link>
-      // </Nav.Item>
+        
+
       )}
-    {user && (
-        <>
+    {user && user?.accessToken !== "" && (
+           <Navbar bg="dark" data-bs-theme="dark">
+           <Container>
         <Nav.Item>
         <Nav.Link href="/">Gespro</Nav.Link>
         </Nav.Item>
@@ -78,7 +69,8 @@ export const MainTab = () => {
           <Nav.Item>
             <Nav.Link onClick={()=>handleCloseSession()}>Cerrar sesion</Nav.Link>
           </Nav.Item>
-        </>
+          </Container>
+      </Navbar>
       )}
     </Nav>
   );
